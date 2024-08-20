@@ -155,7 +155,7 @@ $(document).ready(function(){
     })
 
     $('.resume a').mouseover(function(){
-        gsap.from(this, 0.6, { delay: 0.4, '--width': 0, ease: 'expo.inOut' })
+        gsap.from(this, 0.6, { delay: 0.3, '--width': 0, ease: 'expo.inOut' })
         gsap.from(this, 0.8, { '--transform': 'scaleX(1)', ease: 'expo.inOut' })
     })
 

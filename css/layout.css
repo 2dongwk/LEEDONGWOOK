@@ -682,7 +682,9 @@ canvas {
 @media only screen and (max-width: 768px) and (min-width: 621px){
     .intro {min-height: 0;}
     .intro_wrap {top: 100px;}
-    .intro_wrap li:nth-child(3) {top: 17rem;}
+    .intro_wrap li {font-size: 3rem;}
+    .intro_wrap li:nth-child(1) {top: -2rem;}
+    .intro_wrap li:nth-child(3) {top: 18rem;}
 
     .intro_video_wrap {
         width: 95%;
@@ -877,7 +879,9 @@ canvas {
 @media only screen and (max-width: 620px) and (min-width: 0px){
     .intro {min-height: 0;}
     .intro_wrap {top: 100px;}
-    .intro_wrap li:nth-child(3) {top: 17rem;}
+    .intro_wrap li {font-size: 3rem;}
+    .intro_wrap li:nth-child(1) {top: -2rem;}
+    .intro_wrap li:nth-child(3) {top: 18rem;}
 
     .intro_video_wrap {
         width: 95%;

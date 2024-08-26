@@ -11,6 +11,7 @@ $(document).ready(function(){
     gsap.from(".intro_text p, .intro_text span", 0.8, {
         delay: 2.7,
         yPercent: 100,
+        opacity: 0,
         ease: 'expo.out'
     })
 
@@ -68,18 +69,6 @@ $(document).ready(function(){
         })
     })
 
-    $('body').mousemove(function(e){
-        const winWidth = $(window).width()
-        const video = $('.intro_video').width()
-        const videoCenter = video / 2
-        const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
-        
-        gsap.to(".intro_video", 1, {
-            x: follow,
-            ease: 'power2'
-        })
-    })
-
     gsap.to(".intro_text", {
         scrollTrigger: {
             start: 'top top',
@@ -100,25 +89,6 @@ $(document).ready(function(){
         stagger: 0.05
     })
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: '.space_container',
-            start: 'top 90%',
-            end: 'top 50%',
-            scrub: 0.5
-        }
-    }).fromTo(".intro_video", {
-        'width':'calc(30% + ((1920px - 100vw) / 10))',
-        duration: 10,
-        ease: 'none',
-        'top': '30%'
-    }, {
-        'width':'calc(90% + ((1920px - 100vw) / 10))',
-        duration: 10,
-        ease: 'none',
-        'top': '55%'
-    },0)
-
     gsap.from(".about_title li", 1, {
         scrollTrigger: {
             trigger: '.about_title',
@@ -136,22 +106,6 @@ $(document).ready(function(){
         },
         yPercent: 80,
         ease: 'expo.out',
-    })
-
-    $('.about_text h3').mouseover(function(){
-        if($(this).siblings('div').hasClass('on')){
-            return
-        }else{
-            $('.on').removeClass('on')
-            $(this).siblings('div').addClass('on')
-    
-            $('.about_detail_wrap').stop().fadeOut(100)
-            $('.on>.about_detail_wrap').stop().fadeIn(200)
-
-            gsap.to(".about_text h3", 0.2, { opacity: 0.2 })
-            gsap.to(this, 0.2, { opacity: 1 })
-            gsap.from(".on>.about_detail_wrap", 0.4, { scale: 0.8 })
-        }
     })
 
     $('.resume a').mouseover(function(){
@@ -304,4 +258,86 @@ $(document).ready(function(){
         }
     }
     //------------------ CodePen Code ------------------//
+
+
+    ScrollTrigger.matchMedia({
+        "(min-width: 1025px)": function(){
+            $('body').on('mousemove',function(e){
+                const winWidth = $(window).width()
+                const video = $('.intro_video').width()
+                const videoCenter = video / 2
+                const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
+                
+                gsap.to(".intro_video", 1, {
+                    x: follow,
+                    ease: 'power2'
+                })
+            })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.space_container',
+                    start: 'top 90%',
+                    end: 'top 50%',
+                    scrub: 0.5
+                }
+            }).fromTo(".intro_video", {
+                'width': 'calc(30% + ((1920px - 100vw) / 10))',
+                duration: 10,
+                ease: 'none',
+                'top': '0'
+            }, {
+                'width': 'calc(90% + ((1920px - 100vw) / 10))',
+                duration: 10,
+                ease: 'none',
+                'top': '5%'
+            },0)
+        },
+
+        "(max-width: 1024px)": function(){
+            $('body').off('mousemove')
+
+            gsap.to(".intro_video", 1, {
+                x: 0,
+                'top': '0',
+                'left':'0',
+                ease: 'expo.out'
+            })
+        },
+
+        "(min-width: 769px)": function(){
+            $('.about_detail_wrap').stop().fadeOut(100)
+            $('.skill .about_detail_wrap').stop().fadeIn(200)
+            $('.skill .about_detail').addClass('on')
+
+            $('.about_text h3').on('mouseover',function(){
+                if($(this).siblings('div').hasClass('on')){
+                    return
+                }else{
+                    $('.on').removeClass('on')
+                    $(this).siblings('div').addClass('on')
+            
+                    $('.about_detail_wrap').stop().fadeOut(100)
+                    $('.on>.about_detail_wrap').stop().fadeIn(200)
+        
+                    gsap.to(".about_text h3", 0.2, { opacity: 0.2 })
+                    gsap.to(this, 0.2, { opacity: 1 })
+                    gsap.from(".on>.about_detail_wrap", 0.4, { scale: 0.9 })
+                }
+            })
+        },
+
+        "(max-width: 768px)": function(){
+            $('.about_text h3').off('mouseover')
+            .siblings('div').removeClass('on')
+            .find('.about_detail_wrap').stop().fadeIn(200)
+
+            gsap.to(".about_text h3", { opacity: 1 })
+            gsap.to(".education .about_detail_wrap", {
+                'display': 'flex',
+                'justify-content': 'space-between'
+            })
+        }
+    })
 })
+

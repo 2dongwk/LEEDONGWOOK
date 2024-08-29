@@ -78,13 +78,13 @@ nav ul {gap: 0.5rem;}
 
 h1 li {
     font-size: 24px;
+    letter-spacing: -1.4px;
     cursor: pointer;
 }
 
 nav li {
     line-height: 100%;
     font-size: 18px;
-    letter-spacing: -0.01rem;
     cursor: pointer;
 }
 
@@ -99,7 +99,7 @@ nav li {
 
 .intro_wrap {
     width: 90%;
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
     position: absolute;
     top: 60px;
     left: 50%;
@@ -116,14 +116,10 @@ nav li {
 .intro_wrap li {
     width: fit-content;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
     display: flex;
     gap: 0.5rem;
     font-size: 2.2rem;
 }
-
-.intro_text {overflow: hidden;}
 
 .intro_wrap li.name {
     top: calc(50% - 60px);
@@ -145,6 +141,12 @@ nav li {
     font-size: 12.5rem;
     letter-spacing: -1rem;
     z-index: 0;
+}
+
+.intro_text {
+    left: 50%;
+    transform: translate(-50%, 0)!important;
+    overflow: hidden;
 }
 
 .intro_wrap li:nth-child(3) {
@@ -680,6 +682,9 @@ canvas {
 }
 
 @media only screen and (max-width: 768px) and (min-width: 621px){
+    h1 li {font-size: 20px;}
+    nav li {font-size: 15px;}
+    
     .intro {min-height: 0;}
     .intro_wrap {top: 100px;}
     .intro_wrap li {font-size: 3rem;}
@@ -877,6 +882,9 @@ canvas {
 }
 
 @media only screen and (max-width: 620px) and (min-width: 0px){
+    h1 li {font-size: 20px;}
+    nav li {font-size: 15px;}
+    
     .intro {min-height: 0;}
     .intro_wrap {top: 100px;}
     .intro_wrap li {font-size: 3rem;}

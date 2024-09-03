@@ -640,10 +640,6 @@ canvas {
     border-radius: 0.4rem;
 }
 
-@media only screen and (min-width: 1601px){
-    .intro_video_wrap {top: 52%;}
-}
-
 @media only screen and (max-width: 1600px) and (min-width: 1025px){
     .intro {
         width: 100%;
@@ -651,8 +647,6 @@ canvas {
         min-height: 680px;
         position: relative;
     }
-
-    .intro_video_wrap {top: 45%;}
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 769px){

@@ -299,7 +299,7 @@ canvas {
 }
 
 .skill .about_detail_wrap {display: block;}
-.education .about_detail_wrap {background-color: #f6f6f6;}
+.education .about_detail_wrap {background-color: #fafafa;}
 
 .about_detail_wrap>p, .education_title>p {
     font-size: 1.6rem;
@@ -341,7 +341,7 @@ canvas {
     position: relative;
     border-radius: 0.6rem;
     background-color: #ffffff;
-    box-shadow: inset 0 0 14px rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
 }
 
 .about_detail_inner>p {

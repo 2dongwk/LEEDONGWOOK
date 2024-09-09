@@ -306,6 +306,8 @@ $(document).ready(function(){
         },
 
         "(min-width: 769px)": function(){
+            gsap.to(".about_text h3", 0.2, { opacity: 0.2 })
+            gsap.to(".skill h3", 0.2, { opacity: 1 })
             $('.about_detail_wrap').stop().fadeOut(100)
             $('.skill .about_detail_wrap').stop().fadeIn(200)
             $('.skill .about_detail').addClass('on')

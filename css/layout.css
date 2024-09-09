@@ -315,6 +315,23 @@ canvas {
     color: #999999;
 }
 
+.education_title>p:nth-child(2) {
+    margin-top: 0.2rem;
+    position: relative;
+    background: linear-gradient(60deg, #000000 44%, #bbbbbb 50%, #000000 56%);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shining 2s linear infinite;
+    animation-direction: reverse;
+}
+
+@keyframes shining {
+    to { background-position: 100%;}
+}
+
 .about_detail_inner {
     width: 75%;
     height: fit-content;
@@ -752,6 +769,8 @@ canvas {
         margin-bottom: 0.8rem;
         font-size: 1.8rem;
     }
+
+    .education_title>p:nth-child(2) {background-size: 350%;}
     
     .about_detail_inner {
         width: calc(60% - 13rem);
@@ -952,6 +971,8 @@ canvas {
         margin-bottom: 0.8rem;
         font-size: 1.8rem;
     }
+
+    .education_title>p:nth-child(2) {background-size: 350%;}
     
     .about_detail_inner {
         width: calc(60% - 13rem);

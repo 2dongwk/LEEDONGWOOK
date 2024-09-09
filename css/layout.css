@@ -16,7 +16,7 @@
 	src: url('../fonts/WorkSans-VariableFont_wght.ttf') format('woff2-variations');
 }
 
-html {font-size: clamp(2px, 1vw, 24px);}
+html {font-size: clamp(2px, 1vw, 18px);}
 
 a {text-decoration: none; color: inherit;}
 li {list-style: none;}

@@ -13,7 +13,14 @@
 	font-family: 'WorkSans Variable';
 	font-weight: 100 900;
 	font-style: normal;
-	src: url('../fonts/WorkSans-VariableFont_wght.ttf') format('woff2-variations');
+	src: url('../fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'SchibstedGrotesk Variable';
+	font-weight: 100 900;
+	font-style: normal;
+	src: url('../fonts/SchibstedGrotesk-VariableFont_wght.ttf') format('truetype');
 }
 
 html {font-size: clamp(2px, 1vw, 18px);}
@@ -47,8 +54,9 @@ img {width: 100%;}
 .clearfix::after {display: block; content: ""; clear: both;}
 
 body {font-family: 'Pretendard Variable'; background-color: #ffffff; overflow-x: hidden;}
-h1, h2, .title li, .about_text>div h3 {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
+h1, h2, .title li, .about_text>div h3, footer p {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
 .intro_wrap p, .intro_wrap span, .tsl_cover, .moog_cover {font-family: termina, sans-serif; font-weight: 600; letter-spacing: -0.07rem;}
+/* h1, h2, .title li, .about_text>div h3 {font-family: 'SchibstedGrotesk Variable'; letter-spacing: -0.15rem;} */
 
 header {
     width: 90%;
@@ -449,9 +457,20 @@ canvas {
     transform-origin: right;
 }
 
-.work {margin: 3rem 0;}
+.work {
+    margin: 3rem 0;
+    position: relative;
+}
 
 .work_title li {letter-spacing: -1rem;}
+
+.work>p {
+    position: absolute;
+    top: 3.1rem;
+    left: 38rem;
+    font-size: 1.2rem;
+    color: #999999;
+}
 
 .work_content_wrap {
     display: flex;
@@ -658,6 +677,63 @@ canvas {
     border-radius: 0.4rem;
 }
 
+footer {
+    width: 100%;
+    aspect-ratio: 1 / 0.5;
+    position: relative;
+}
+
+.foot_wrap {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -57%);
+}
+
+footer p {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 0.6rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.04rem;
+}
+
+footer h2 {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: -0.3rem;
+    color: #282828;
+}
+
+footer .phonenumber {
+    position: relative;
+    transform: translate(3rem, 0);
+    font-size: 13.6rem;
+    font-weight: 600;
+    letter-spacing: -1.2rem;
+}
+
+footer .phonenumber span {
+    display: block;
+    width: 6rem;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: -6rem;
+    transform: translate(0, -50%);
+}
+
+footer .phonenumber svg {
+    width: 100%;
+    height: 100%;
+}
+
+footer .phonenumber svg path {fill: #282828;}
+
 @media only screen and (max-width: 1600px) and (min-width: 1025px){
     .intro {
         width: 100%;
@@ -665,6 +741,8 @@ canvas {
         min-height: 680px;
         position: relative;
     }
+
+    .foot_wrap {transform: translate(0, -48%);}
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 769px){
@@ -691,6 +769,8 @@ canvas {
     }
 
     .space_container {height: 25rem;}
+
+    .foot_wrap {transform: translate(0, -48%);}
 }
 
 @media only screen and (max-width: 768px) and (min-width: 621px){
@@ -893,6 +973,9 @@ canvas {
     }
 
     .guide_list li img {border-radius: 0.8rem;}
+
+    .foot_wrap {transform: translate(0, -65%);}
+    footer p {font-size: 3rem;}
 }
 
 @media only screen and (max-width: 620px) and (min-width: 0px){
@@ -1095,4 +1178,7 @@ canvas {
     }
 
     .guide_list li img {border-radius: 0.8rem;}
+
+    .foot_wrap {transform: translate(0, -65%);}
+    footer p {font-size: 3.4rem;}
 }

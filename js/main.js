@@ -1,7 +1,7 @@
 $(document).ready(function(){
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.from("h2", 1.5, {
+    gsap.from(".intro h2", 1.5, {
         delay: 0.8,
         rotateX: 90,
         ease: 'expo.out',
@@ -39,6 +39,7 @@ $(document).ready(function(){
         const intro = $('.intro').offset().top
         const about = $('.about').offset().top * 0.95
         const work = $('.work').offset().top * 0.975
+        const contact = $('footer').offset().top + $('footer').height() - $(window).height()
 
         if(anchor == 0){
             gsap.to("html, body", 1, {
@@ -53,6 +54,11 @@ $(document).ready(function(){
         }else if(anchor == 2){
             gsap.to("html, body", 1, {
                 scrollTop: work,
+                ease: 'expo.out'
+            })
+        }else if(anchor == 3){
+            gsap.to("html, body", 1, {
+                scrollTop: contact,
                 ease: 'expo.out'
             })
         }
@@ -79,7 +85,7 @@ $(document).ready(function(){
         opacity: 0,
     })
 
-    gsap.to("h2", {
+    gsap.to(".intro h2", {
         scrollTrigger: {
             start: 'top top',
             end: '20% 20%',

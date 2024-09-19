@@ -762,6 +762,8 @@ footer .phonenumber svg path {fill: #282828;}
 
     .space_container {height: 25rem;}
 
+    .work>p {font-size: 1.4rem;}
+
     .foot_wrap {transform: translate(0, -48%);}
 }
 
@@ -903,6 +905,8 @@ footer .phonenumber svg path {fill: #282828;}
         transform: translate(-50%, -50%);
         font-size: 4rem;
     }
+
+    .work>p {font-size: 2rem;}
 
     .work_content_wrap {display: block;}
 
@@ -1108,6 +1112,8 @@ footer .phonenumber svg path {fill: #282828;}
         transform: translate(-50%, -50%);
         font-size: 4rem;
     }
+
+    .work>p {font-size: 2rem;}
 
     .work_content_wrap {display: block;}
 

@@ -16,13 +16,6 @@
 	src: url('../fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
 }
 
-@font-face {
-	font-family: 'SchibstedGrotesk Variable';
-	font-weight: 100 900;
-	font-style: normal;
-	src: url('../fonts/SchibstedGrotesk-VariableFont_wght.ttf') format('truetype');
-}
-
 html {font-size: clamp(2px, 1vw, 18px);}
 
 a {text-decoration: none; color: inherit;}
@@ -56,7 +49,6 @@ img {width: 100%;}
 body {font-family: 'Pretendard Variable'; background-color: #ffffff; overflow-x: hidden;}
 h1, h2, .title li, .about_text>div h3, footer p {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
 .intro_wrap p, .intro_wrap span, .tsl_cover, .moog_cover {font-family: termina, sans-serif; font-weight: 600; letter-spacing: -0.07rem;}
-/* h1, h2, .title li, .about_text>div h3 {font-family: 'SchibstedGrotesk Variable'; letter-spacing: -0.15rem;} */
 
 header {
     width: 90%;

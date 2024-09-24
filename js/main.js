@@ -217,21 +217,21 @@ $(document).ready(function(){
             scale: 1,
             ease: 'expo.out'
         })
-
-        $('footer button').mousedown(function(){
-            gsap.to(".foot_cursor", 0.3, {
-                scale: 0.85,
-                ease: 'expo.out'
-            })
-        }).mouseup(function(){
-            gsap.to(".foot_cursor", 0.4, {
-                scale: 1,
-                ease: 'expo.out'
-            })
-        })
     }).mouseleave(function(){
         gsap.to(".foot_cursor", 0.2, {
             scale: 0,
+            ease: 'expo.out'
+        })
+    })
+
+    $('footer button').mousedown(function(){
+        gsap.to(".foot_cursor", 0.2, {
+            scale: 0.85,
+            ease: 'expo.out'
+        })
+    }).mouseup(function(){
+        gsap.to(".foot_cursor", 0.2, {
+            scale: 1,
             ease: 'expo.out'
         })
     })

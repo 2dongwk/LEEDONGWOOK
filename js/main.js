@@ -212,6 +212,40 @@ $(document).ready(function(){
         }
     })
 
+    $('footer button').mouseenter(function(){
+        gsap.to(".foot_cursor", 0.2, {
+            scale: 1,
+            ease: 'expo.out'
+        })
+
+        $('footer button').mousedown(function(){
+            gsap.to(".foot_cursor", 0.3, {
+                scale: 0.85,
+                ease: 'expo.out'
+            })
+        }).mouseup(function(){
+            gsap.to(".foot_cursor", 0.4, {
+                scale: 1,
+                ease: 'expo.out'
+            })
+        })
+    }).mouseleave(function(){
+        gsap.to(".foot_cursor", 0.2, {
+            scale: 0,
+            ease: 'expo.out'
+        })
+    })
+
+    $('footer button').mousemove(function(e){
+        const cursorX = e.pageX - 100
+        const cursorY = e.pageY - 30
+
+        gsap.to(".foot_cursor", 0, {
+            x: cursorX,
+            y: cursorY
+        })
+    })
+
     //------------------ CodePen Code ------------------//
     const PI2 = 2 * Math.PI
     const canvas = document.querySelector('canvas')

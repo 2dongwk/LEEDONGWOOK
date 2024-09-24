@@ -47,7 +47,7 @@ img {width: 100%;}
 .clearfix::after {display: block; content: ""; clear: both;}
 
 body {font-family: 'Pretendard Variable'; background-color: #ffffff; overflow-x: hidden;}
-h1, h2, .title li, .about_text>div h3, footer p {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
+h1, h2, .title li, .about_text>div h3, .contact_text, footer button {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
 .intro_wrap p, .intro_wrap span, .tsl_cover, .moog_cover {font-family: termina, sans-serif; font-weight: 600; letter-spacing: -0.07rem;}
 
 header {
@@ -683,19 +683,24 @@ footer {
     transform: translate(0, -50%);
 }
 
-footer p {
+.contact_text {
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 0.6rem;
-    font-size: 2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: -0.04rem;
+    letter-spacing: 0;
     user-select: none;
 }
 
-footer h2 {
+footer button {
+    display: block;
     width: fit-content;
     margin: 0 auto;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
     font-size: 6rem;
     font-weight: 600;
     letter-spacing: -0.3rem;
@@ -722,6 +727,23 @@ footer .phonenumber span {
 footer .phonenumber svg {
     width: 100%;
     height: 100%;
+}
+
+.copy_modal {
+    width: fit-content;
+    padding: 12px 22px 12px 24px;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: #333333;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.02rem;
+    color: #ffffff;
+    z-index: 999;
+    display: none;
 }
 
 @media only screen and (max-width: 1600px) and (min-width: 1025px){
@@ -969,7 +991,7 @@ footer .phonenumber svg {
     .guide_list li img {border-radius: 0.8rem;}
 
     .foot_wrap {transform: translate(0, -65%);}
-    footer p {font-size: 3rem;}
+    .contact_text {font-size: 3rem;}
 }
 
 @media only screen and (max-width: 620px) and (min-width: 0px){
@@ -1176,5 +1198,5 @@ footer .phonenumber svg {
     .guide_list li img {border-radius: 0.8rem;}
 
     .foot_wrap {transform: translate(0, -65%);}
-    footer p {font-size: 3.4rem;}
+    .contact_text {font-size: 3.4rem;}
 }

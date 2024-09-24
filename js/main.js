@@ -157,6 +157,61 @@ $(document).ready(function(){
         }
     })
 
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    document.querySelector(".contact_text").onmouseover = event => {
+        let iterations = 0
+        
+        const interval = setInterval(() => {
+            event.target.innerText = event.target.innerText.split("")
+                .map((letter, index) => {
+                    if(index < iterations){
+                        return event.target.dataset.value[index]
+                    }
+
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("")
+            
+            if(iterations >= event.target.dataset.value.length){
+                clearInterval(interval)
+            }
+    
+            iterations += 1 / 2.5
+        }, 30)
+    }
+
+    function copyToClipboard(val) {
+        let copyText = document.createElement("textarea")
+        document.body.appendChild(copyText)
+        copyText.value = val
+        copyText.select()
+        document.execCommand('copy')
+        document.body.removeChild(copyText)
+    }
+    
+    const modal = $('.copy_modal')
+
+    $('#phonenumber').click(function(){
+        copyToClipboard('+821034394906')
+
+        if(modal.is(':visible')){
+            return
+        }else{
+            modal.stop().fadeIn(0).delay(1000).fadeOut(400)
+        }
+    })
+
+    $('#email').click(function(){
+        copyToClipboard('2dongwk@gmail.com')
+
+        if(modal.is(':visible')){
+            return
+        }else{
+            modal.stop().fadeIn(0).delay(1000).fadeOut(400)
+        }
+    })
+
     //------------------ CodePen Code ------------------//
     const PI2 = 2 * Math.PI
     const canvas = document.querySelector('canvas')

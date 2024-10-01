@@ -177,7 +177,7 @@ $(document).ready(function(){
                 clearInterval(interval)
             }
     
-            iterations += 1 / 2.5
+            iterations += 1 / 2
         }, 30)
     }
 

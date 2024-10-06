@@ -102,7 +102,7 @@ $(document).ready(function(){
         },
         yPercent: 80,
         ease: 'power2',
-        stagger: 0.1,
+        stagger: 0.15,
     })
 
     gsap.from(".profile_img img", 3, {
@@ -119,14 +119,14 @@ $(document).ready(function(){
         gsap.from(this, 0.8, { '--transform': 'scaleX(1)', ease: 'expo.inOut' })
     })
 
-    gsap.from(".work_title li", 0.8, {
+    gsap.from(".work_title li", 1, {
         scrollTrigger: {
             trigger: '.work_title',
             start: 'top 80%',
         },
         yPercent: 80,
         ease: 'power2',
-        stagger: 0.1,
+        stagger: 0.15,
     })
 
     $('.work_content_wrap>div>div').mouseover(function(){
@@ -189,6 +189,38 @@ $(document).ready(function(){
         document.execCommand('copy')
         document.body.removeChild(copyText)
     }
+
+    gsap.from(".contact_text", 1.5, {
+        scrollTrigger: {
+            trigger: '.foot_wrap',
+            start: 'top 80%',
+        },
+        yPercent: 160,
+        ease: 'power2',
+        opacity: 0,
+    })
+
+    gsap.from("#phonenumber", 1.5, {
+        scrollTrigger: {
+            trigger: '.foot_wrap',
+            start: 'top 80%',
+        },
+        delay: 0.4,
+        yPercent: 15,
+        ease: 'power2',
+        opacity: 0,
+    })
+
+    gsap.from("#email", 1.5, {
+        scrollTrigger: {
+            trigger: '.foot_wrap',
+            start: 'top 80%',
+        },
+        delay: 0.8,
+        yPercent: 25,
+        ease: 'power2',
+        opacity: 0,
+    })
     
     const modal = $('.copy_modal')
 

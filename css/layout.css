@@ -764,6 +764,7 @@ footer .phonenumber svg {
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 0.02rem;
+    text-align: center;
     color: #ffffff;
     z-index: 999;
     display: none;

@@ -192,24 +192,38 @@ $(document).ready(function(){
     
     const modal = $('.copy_modal')
 
+    function modal_off(){
+        modal.fadeOut(400)
+    }
+
+    function modal_on_phonenumber(){
+        modal.fadeOut(0)
+        clearTimeout(modal_off)
+
+        $('.phonenumber_copy').stop().fadeIn(0, function(){
+            setTimeout(modal_off, 1000)
+        })
+    }
+
+    function modal_on_email(){
+        modal.fadeOut(0)
+        clearTimeout(modal_off)
+
+        $('.email_copy').stop().fadeIn(0, function(){
+            setTimeout(modal_off, 1000)
+        })
+    }
+
     $('#phonenumber').click(function(){
         copyToClipboard('+821034394906')
 
-        if(modal.is(':visible')){
-            return
-        }else{
-            modal.stop().fadeIn(0).delay(1000).fadeOut(400)
-        }
+        modal_on_phonenumber()
     })
 
     $('#email').click(function(){
         copyToClipboard('2dongwk@gmail.com')
 
-        if(modal.is(':visible')){
-            return
-        }else{
-            modal.stop().fadeIn(0).delay(1000).fadeOut(400)
-        }
+        modal_on_email()
     })
 
     $('footer button').mouseenter(function(){

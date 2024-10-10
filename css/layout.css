@@ -618,7 +618,7 @@ footer button {
 }
 
 footer .phonenumber {
-    margin-left: 8.8rem;
+    /* margin-left: 8.8rem; */
     position: relative;
     font-size: 13.6rem;
     font-weight: 600;

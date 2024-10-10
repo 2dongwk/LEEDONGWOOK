@@ -456,14 +456,6 @@ canvas {
 
 .work_title li {letter-spacing: -1rem;}
 
-.work>p {
-    position: absolute;
-    top: 3.1rem;
-    left: 38rem;
-    font-size: 1.2rem;
-    color: #999999;
-}
-
 .work_content_wrap {
     display: flex;
     justify-content: space-between;
@@ -586,87 +578,6 @@ canvas {
     color: #ffffff;
     font-weight: 600;
     text-align: center;
-}
-
-.view_guide {
-    width: 100%;
-    position: relative;
-    letter-spacing: -0.04rem;
-}
-
-.view_guide>p {
-    width: 93%;
-    height: fit-content;
-    margin: 0 auto;
-    margin-bottom: 0.7rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.view_guide span {
-    display: block;
-    width: 1.2rem;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 8.6rem;
-    transform: translate(0, -50%);
-}
-
-.view_guide svg {
-    width: 100%;
-    height: 100%;
-}
-
-.guide_list {
-    width: 90%;
-    aspect-ratio: 1 / 0.9;
-    position: absolute;
-    top: 2.55rem;
-    background-color: #ffffff;
-    border-radius: 0.9rem;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: none;
-    z-index: 10;
-}
-
-.guide_list::-webkit-scrollbar-thumb {
-    outline: none;
-    border-radius: 10px;
-    border: 4px solid transparent;
-    box-shadow: inset 6px 6px 0 rgba(0,0,0,0.15);
-}
-
-.guide_list::-webkit-scrollbar-thumb:hover {
-    border: 4px solid transparent;
-    box-shadow: inset 6px 6px 0 rgba(0,0,0,0.3);
-}
-
-.guide_list ul {margin: 2rem;}
-
-.guide_list li {margin-top: 2rem;}
-.guide_list li:first-child {margin-top: 0;}
-
-.guide_list li p {
-    margin-bottom: 0.2rem;
-    margin-left: 0.8rem;
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: left;
-    text-shadow: 0 0 1rem rgba(255,255,255,0.6);
-    color: #000000;
-}
-
-.guide_list li img {
-    display: block;
-    border-radius: 0.4rem;
 }
 
 footer {
@@ -805,8 +716,6 @@ footer .phonenumber svg {
     }
 
     .space_container {height: 25rem;}
-
-    .work>p {font-size: 1.4rem;}
 
     .foot_wrap {transform: translate(0, -48%);}
 }
@@ -950,8 +859,6 @@ footer .phonenumber svg {
         font-size: 4rem;
     }
 
-    .work>p {font-size: 2rem;}
-
     .work_content_wrap {display: block;}
 
     .work_content_wrap>div {
@@ -983,36 +890,6 @@ footer .phonenumber svg {
     }
     
     .info p:last-child span {margin-bottom: 4px;}
-
-    .view_guide>p {
-        width: 97%;
-        margin-left: -3.2rem;
-        margin-bottom: 2rem;
-        font-size: 3rem;
-        justify-content: right;
-    }
-
-    .view_guide span {
-        width: 2.4rem;
-        left: unset;
-        right: -3.2rem;
-    }
-
-    .guide_list {
-        top: 5.5rem;
-        border-radius: 1.5rem;
-    }
-
-    .guide_list li {margin-top: 4rem;}
-    .guide_list li:first-child {margin-top: 4rem;}
-
-    .guide_list li p {
-        margin-bottom: 0.8rem;
-        margin-left: 1.4rem;
-        font-size: 3rem;
-    }
-
-    .guide_list li img {border-radius: 0.8rem;}
 
     .foot_wrap {transform: translate(0, -65%);}
     .contact_text {font-size: 3rem;}
@@ -1157,8 +1034,6 @@ footer .phonenumber svg {
         font-size: 4rem;
     }
 
-    .work>p {font-size: 2rem;}
-
     .work_content_wrap {display: block;}
 
     .work_content_wrap>div {
@@ -1190,36 +1065,6 @@ footer .phonenumber svg {
     }
     
     .info p:last-child span {margin-bottom: 4px;}
-
-    .view_guide>p {
-        width: 97%;
-        margin-left: -3.2rem;
-        margin-bottom: 2rem;
-        font-size: 3rem;
-        justify-content: right;
-    }
-
-    .view_guide span {
-        width: 2.4rem;
-        left: unset;
-        right: -3.2rem;
-    }
-
-    .guide_list {
-        top: 5.5rem;
-        border-radius: 1.5rem;
-    }
-
-    .guide_list li {margin-top: 4rem;}
-    .guide_list li:first-child {margin-top: 4rem;}
-
-    .guide_list li p {
-        margin-bottom: 0.8rem;
-        margin-left: 1.4rem;
-        font-size: 3rem;
-    }
-
-    .guide_list li img {border-radius: 0.8rem;}
 
     .foot_wrap {transform: translate(0, -65%);}
     .contact_text {font-size: 3.4rem;}

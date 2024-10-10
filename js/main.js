@@ -137,26 +137,6 @@ $(document).ready(function(){
         $(this).find('.info').css({'filter':'blur(20px)'})
     })
 
-    $('.work_content_wrap .view_guide>p').click(function(){
-        if($(this).hasClass('open')){
-            $(this).removeClass('open')
-            gsap.to($(this).find('svg'), 1.5, {
-                rotate: 0,
-                ease: 'expo.out'
-            })
-            $(this).siblings('div').stop().slideUp(400).find('ul').css({'margin-right':'2rem'})
-        }else{
-            $(this).addClass('open')
-            gsap.to($(this).find('svg'), 1.5, {
-                rotate: 315,
-                ease: 'expo.out'
-            })
-            $(this).siblings('div').stop().slideDown(400,function(){
-                $(this).find('ul').css({'margin-right':'calc(2rem - 14px)'})
-            })
-        }
-    })
-
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     document.querySelector(".contact_text").onmouseover = event => {

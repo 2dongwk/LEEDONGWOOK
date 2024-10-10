@@ -618,8 +618,8 @@ footer button {
 }
 
 footer .phonenumber {
+    margin-left: 8.8rem;
     position: relative;
-    transform: translate(3rem, 0);
     font-size: 13.6rem;
     font-weight: 600;
     letter-spacing: -1.2rem;

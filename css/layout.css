@@ -219,7 +219,7 @@ nav li {
     overflow: hidden;
 }
 
-canvas {
+.profile_bg canvas {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -700,7 +700,13 @@ footer .phonenumber svg {
         position: relative;
     }
 
-    .intro_wrap li:nth-child(3) {top: 17rem;}
+    @keyframes nameUp {
+        98% {top: 13.1rem}
+        100% {top: 13rem}
+    }
+
+    .intro_wrap li:nth-child(1) {top: 4rem;}
+    .intro_wrap li:nth-child(3) {top: 20rem;}
 
     .intro_video_wrap {
         width: 95%;
@@ -723,12 +729,16 @@ footer .phonenumber svg {
 @media only screen and (max-width: 768px) and (min-width: 621px){
     h1 li {font-size: 20px;}
     nav li {font-size: 15px;}
-    
     .intro {min-height: 0;}
-    .intro_wrap {top: 100px;}
     .intro_wrap li {font-size: 3rem;}
-    .intro_wrap li:nth-child(1) {top: -2rem;}
-    .intro_wrap li:nth-child(3) {top: 18rem;}
+
+    @keyframes nameUp {
+        98% {top: 15.6rem}
+        100% {top: 15.5rem}
+    }
+
+    .intro_wrap li:nth-child(1) {top: 4rem;}
+    .intro_wrap li:nth-child(3) {top: 24rem;}
 
     .intro_video_wrap {
         width: 95%;
@@ -898,12 +908,16 @@ footer .phonenumber svg {
 @media only screen and (max-width: 620px) and (min-width: 0px){
     h1 li {font-size: 20px;}
     nav li {font-size: 15px;}
-    
     .intro {min-height: 0;}
-    .intro_wrap {top: 100px;}
     .intro_wrap li {font-size: 3rem;}
-    .intro_wrap li:nth-child(1) {top: -2rem;}
-    .intro_wrap li:nth-child(3) {top: 18rem;}
+
+    @keyframes nameUp {
+        98% {top: 21.1rem}
+        100% {top: 21rem}
+    }
+
+    .intro_wrap li:nth-child(1) {top: 10rem;}
+    .intro_wrap li:nth-child(3) {top: 30rem;}
 
     .intro_video_wrap {
         width: 95%;

@@ -380,7 +380,6 @@ $(document).ready(function(){
     }
     //------------------ CodePen Code ------------------//
 
-
     ScrollTrigger.matchMedia({
         "(min-width: 1025px)": function(){
             $('body').on('mousemove',function(e){
@@ -400,7 +399,7 @@ $(document).ready(function(){
                     trigger: '.space_container',
                     start: 'top 90%',
                     end: 'top 50%',
-                    scrub: 0.5
+                    scrub: 0.5,
                 }
             }).fromTo(".intro_video", {
                 'width': 'calc(30% + ((1920px - 100vw) / 10))',

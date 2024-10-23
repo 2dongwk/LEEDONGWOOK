@@ -521,7 +521,7 @@ nav li {
 .moog_cover p:nth-child(1) {top: 21rem;}
 
 .moog_cover p:nth-child(2) {
-    bottom: 13rem;
+    bottom: 14.5rem;
     z-index: 1;
 }
 
@@ -619,8 +619,8 @@ footer button {
 }
 
 footer .phonenumber {
+    padding-left: 6rem;
     position: relative;
-    transform: translate(2.5rem, 0);
     font-size: 13.6rem;
     font-weight: 600;
     letter-spacing: -1.2rem;
@@ -632,7 +632,7 @@ footer .phonenumber span {
     height: 100%;
     position: absolute;
     top: 50%;
-    left: -6rem;
+    left: 0;
     transform: translate(0, -50%);
 }
 

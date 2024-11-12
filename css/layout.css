@@ -720,6 +720,8 @@ footer .phonenumber svg {
         position: relative;
     }
 
+    .tools h3 {top: 0;}
+
     .carousel {display: none;}
 
     .tools_mobile {
@@ -806,6 +808,7 @@ footer .phonenumber svg {
     }
 
     .tools h3 {
+        top: 0;
         right: 50%;
         transform: translate(50%, 0);
     }
@@ -950,6 +953,7 @@ footer .phonenumber svg {
     }
 
     .tools h3 {
+        top: 0;
         right: 50%;
         transform: translate(50%, 0);
     }

@@ -3,13 +3,13 @@ $(document).ready(function(){
 
     const lenis = new Lenis();
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', ScrollTrigger.update)
 
     gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
-    });
+    })
 
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(0)
 
     gsap.from(".intro h2", 1.5, {
         delay: 0.8,
@@ -51,6 +51,8 @@ $(document).ready(function(){
         const work = $('.work').offset().top * 0.975
         const contact = $('footer').offset().top + $('footer').height() - $(window).height()
 
+        lenis.stop()
+
         if(anchor == 0){
             gsap.to("html, body", 1, {
                 scrollTop: intro,
@@ -72,6 +74,8 @@ $(document).ready(function(){
                 ease: 'expo.out'
             })
         }
+
+        lenis.start()
     })
 
     $('h1').mouseover(function(event){

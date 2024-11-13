@@ -1,6 +1,16 @@
 $(document).ready(function(){
     gsap.registerPlugin(ScrollTrigger)
-    
+
+    const lenis = new Lenis();
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
     gsap.from(".intro h2", 1.5, {
         delay: 0.8,
         rotateX: 90,

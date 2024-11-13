@@ -44,6 +44,11 @@ img {width: 100%;}
     background-color: rgba(0, 0, 0, 0);
 }
 
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
 .clearfix::after {display: block; content: ""; clear: both;}
 
 body {font-family: 'Pretendard Variable'; background-color: #ffffff; overflow-x: hidden;}

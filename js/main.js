@@ -164,6 +164,16 @@ $(document).ready(function(){
         ease: 'none'
     })
 
+    gsap.from(".spotlight_bg", 0.1, {
+        scrollTrigger: {
+            trigger: '.profile',
+            start: 'bottom top',
+            scrub: 1.5
+        },
+        opacity: 0,
+        ease: 'circ.in'
+    })
+
     gsap.to(".mission h3", 0.8, {
         scrollTrigger: {
             trigger: '.mission h3',

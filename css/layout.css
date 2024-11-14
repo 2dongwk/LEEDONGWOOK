@@ -131,9 +131,7 @@ nav li {
     left: 49%;
     transform: translate(-50%, -50%);
     gap: 2rem;
-    animation-name: nameUp;
-    animation-fill-mode: forwards;
-    animation-duration: 0.8s;
+    animation: nameUp 0.8s forwards;
     animation-delay: 2.5s;
 }
 
@@ -256,6 +254,24 @@ nav li {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+}
+
+.spotlight_bg {
+    width: 120rem;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: -65rem;
+    right: -70rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    filter: blur(100px);
+    animation: scaleUp 6s ease-in-out infinite;
+}
+
+@keyframes scaleUp {
+    0% {transform: scale(1) rotateX(-55deg);}
+    50% {transform: scale(1.6) rotateX(-55deg);}
+    100% {transform: scale(1) rotateX(-55deg);}
 }
 
 .about_content h3 {

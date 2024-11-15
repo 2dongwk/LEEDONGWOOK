@@ -43,8 +43,8 @@ $(document).ready(function(){
     })
 
     gsap.to(".ml16 p", {
-        rotateX: 90,
-        delay: 2,
+        rotateX: 270,
+        delay: 1.8,
         duration: 1.5,
         ease: 'power1.inOut',
         stagger: 0.5

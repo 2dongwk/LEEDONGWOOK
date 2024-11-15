@@ -44,10 +44,10 @@ $(document).ready(function(){
 
     gsap.to(".ml16 p", {
         rotateX: 90,
-        delay: 2.3,
+        delay: 2,
         duration: 1.5,
         ease: 'power1.inOut',
-        stagger: 0.3
+        stagger: 0.5
     })
 
     gsap.to(".count", {

@@ -11,28 +11,97 @@ $(document).ready(function(){
 
     gsap.ticker.lagSmoothing(0)
 
-    gsap.from(".intro h2", 1.5, {
-        delay: 0.8,
+    lenis.stop();
+
+    gsap.to("html, body", { scrollTop: 0 })
+
+    function startLoader(){
+        let counterElement = document.querySelector(".count p");
+        let currentValue = 0;
+
+        function updateCounter(){
+            if (currentValue < 100) {
+                let increment = Math.floor(Math.random() * 10) + 1;
+                currentValue = Math.min(currentValue + increment, 100);
+                counterElement.textContent = currentValue;
+
+                let delay = Math.floor(Math.random() * 200) + 25;
+                setTimeout(updateCounter, delay);
+            }
+        }
+
+        updateCounter();
+    }
+
+    startLoader();
+
+    gsap.to(".pre-loader", {
+        scale: 0.9,
+        delay: 1.5,
+        duration: 3.5,
+        ease: 'power2',
+    })
+
+    gsap.to(".ml16 p", {
         rotateX: 90,
+        delay: 2.3,
+        duration: 1.5,
+        ease: 'power1.inOut',
+        stagger: 0.3
+    })
+
+    gsap.to(".count", {
+        opacity: 0,
+        delay: 4.5,
+        duration: 0.5,
+        ease: 'power2.in',
+    })
+
+    gsap.to(".pre-loader", {
+        rotateX: 90,
+        scale: 0.9,
+        delay: 5,
+        duration: 1,
+        ease: 'expo.inOut',
+    })
+    
+    gsap.to(".loading-container", {
+        opacity: 0,
+        delay: 6,
+        onComplete: function(){
+            lenis.start();
+            $('.loading-container').hide()
+            $('.intro_video').css({'width':'calc(30% + ((1920px - 100vw) / 10))'})
+        }
+    })
+
+    gsap.to(".wrap", {
+        opacity: 1,
+        delay: 6
+    })
+
+    gsap.from(".intro h2", 1.2, {
+        delay: 6.8,
+        rotateX: -90,
         ease: 'expo.out',
         stagger: 0.1
     })
 
     gsap.from(".intro_text p, .intro_text span", 0.8, {
-        delay: 2.7,
+        delay: 8.7,
         yPercent: 100,
         opacity: 0,
         ease: 'expo.out'
     })
 
     gsap.from("header", 0.8, {
-        delay: 2.7,
+        delay: 8.7,
         opacity: 0,
         display: 'none'
     })
 
     gsap.from(".intro_video", 1, {
-        delay: 2.6,
+        delay: 8.6,
         scale: 0,
         display: 'none',
         ease: 'expo.out'

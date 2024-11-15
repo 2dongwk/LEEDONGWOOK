@@ -89,21 +89,21 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    width: 400px;
+    justify-content: right;
+    width: 380px;
     z-index: 2;
     color: #fff;
 }
 
 .count {
-    flex: 2;
     text-align: right;
+    font-size: 14px;
     line-height: 1;
     padding: 0 1em;
 }
 
 .copy {
-    flex: 6;
-    font-size: 3rem;
+    font-size: 36px;
     font-weight: 600;
     line-height: 1;
 }
@@ -112,7 +112,9 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
     display: flex;
     overflow: hidden;
     perspective: 30rem;
+    padding-right: 1em;
 }
+
 .ml16 p {
     margin-left: 0.4rem;
     transform-style: preserve-3d;

@@ -39,7 +39,7 @@ $(document).ready(function(){
         scale: 0.9,
         delay: 1.5,
         duration: 3.5,
-        ease: 'power3',
+        ease: 'power4',
     })
 
     gsap.to(".ml16 p", {

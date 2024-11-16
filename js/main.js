@@ -59,7 +59,6 @@ $(document).ready(function(){
 
     gsap.to(".pre-loader", {
         rotateX: 90,
-        scale: 0.9,
         delay: 5,
         duration: 1,
         ease: 'expo.inOut',
@@ -78,6 +77,7 @@ $(document).ready(function(){
         delay: 5,
         onComplete: function(){
             lenis.start();
+            $('body').css({'background-color':'#fff'})
             $('.intro_video').css({'width':'calc(30% + ((1920px - 100vw) / 10))'})
         }
     })

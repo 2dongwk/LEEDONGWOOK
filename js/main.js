@@ -69,39 +69,41 @@ $(document).ready(function(){
         opacity: 0,
         delay: 6,
         onComplete: function(){
-            lenis.start();
             $('.loading-container').hide()
-            $('.intro_video').css({'width':'calc(30% + ((1920px - 100vw) / 10))'})
         }
     })
 
     gsap.to(".wrap", {
         opacity: 1,
-        delay: 6
+        delay: 5,
+        onComplete: function(){
+            lenis.start();
+            $('.intro_video').css({'width':'calc(30% + ((1920px - 100vw) / 10))'})
+        }
     })
 
     gsap.from(".intro h2", 1.2, {
-        delay: 6.8,
+        delay: 6.2,
         rotateX: -90,
         ease: 'expo.out',
         stagger: 0.1
     })
 
     gsap.from(".intro_text p, .intro_text span", 0.8, {
-        delay: 8.7,
+        delay: 8.1,
         yPercent: 100,
         opacity: 0,
         ease: 'expo.out'
     })
 
     gsap.from("header", 0.8, {
-        delay: 8.7,
+        delay: 8.1,
         opacity: 0,
         display: 'none'
     })
 
     gsap.from(".intro_video", 1, {
-        delay: 8.6,
+        delay: 8,
         scale: 0,
         display: 'none',
         ease: 'expo.out'

@@ -72,34 +72,34 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
 }
 
 .loader {
-    position: absolute;
-    top: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    color: #fff;
+    position: absolute;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000;
+    color: #fff;
 }
 
 .loader-content {
+    width: 380px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: right;
-    width: 380px;
-    z-index: 2;
     color: #fff;
+    z-index: 2;
 }
 
 .count {
-    text-align: right;
+    padding: 0 1em;
     font-size: 14px;
     line-height: 1;
-    padding: 0 1em;
+    text-align: right;
 }
 
 .copy {
@@ -109,10 +109,10 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
 }
 
 .ml16 {
-    display: flex;
-    overflow: hidden;
-    perspective: 30rem;
     padding-right: 1em;
+    display: flex;
+    perspective: 30rem;
+    overflow: hidden;
 }
 
 .ml16 p {
@@ -126,21 +126,20 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
 }
 
 .loader-bg {
-    position: absolute;
-    display: block;
-    top: 0;
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
     z-index: -1;
 }
 
 .loader-2 {
-    position: absolute;
-    top: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    position: absolute;
+    top: 0;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
 }
 
 header {
@@ -222,7 +221,7 @@ nav li {
     transform: translate(-50%, -50%);
     gap: 2rem;
     animation: nameUp 0.8s forwards;
-    animation-delay: 8.5s;
+    animation-delay: 7.9s;
     perspective: 100rem;
 }
 

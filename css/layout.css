@@ -391,13 +391,12 @@ nav li {
     position: absolute;
     top: 12rem;
     left: 8%;
-    font-size: 1.6rem;
-    line-height: 3.4rem;
+    font-size: 1.4rem;
     color: #ffffff;
     mix-blend-mode: difference;
 }
 
-.mission p:nth-child(3) {top: 15rem;}
+.mission p:nth-child(3) {top: 14.5rem;}
 
 .tools {
     margin-top: 45rem;
@@ -788,6 +787,9 @@ footer .phonenumber svg {
         position: relative;
     }
 
+    .mission p {font-size: 1.75rem;}
+    .mission p:nth-child(3) {top: 15.2rem;}
+
     .tools h3 {top: -5%;}
     .foot_wrap {transform: translate(0, -48%);}
 }
@@ -824,8 +826,8 @@ footer .phonenumber svg {
     .space_container {height: 25rem;}
     .about_content {height: 144rem;}
 
-    .mission p {font-size: 2rem;}
-    .mission p:nth-child(3) {top: 15.5rem;}
+    .mission p {font-size: 1.6rem;}
+    .mission p:nth-child(3) {top: 15rem;}
     
     .tools {
         width: 100%;

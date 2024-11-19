@@ -13,8 +13,6 @@ $(document).ready(function(){
 
     lenis.stop();
 
-    gsap.to("html, body", { scrollTop: 0 })
-
     function startLoader(){
         let counterElement = document.querySelector(".count p");
         let currentValue = 0;
@@ -34,6 +32,14 @@ $(document).ready(function(){
     }
 
     startLoader();
+
+    gsap.to("html, body", { scrollTop: 0 });
+
+    gsap.set(".intro_video", {
+        x: 'none',
+        'left': '50%',
+        xPercent: -50,
+    })
 
     gsap.to(".pre-loader", {
         scale: 0.9,
@@ -77,7 +83,7 @@ $(document).ready(function(){
         delay: 5,
         onComplete: function(){
             lenis.start();
-            $('body').css({'background-color':'#fff'})
+            $('body').css({'background-color':'#ffffff'})
             $('.intro_video').css({'width':'calc(30% + ((1920px - 100vw) / 10))'})
         }
     })
@@ -242,7 +248,7 @@ $(document).ready(function(){
             scrub: 1.5
         },
         opacity: 0,
-        ease: 'circ.in'
+        ease: 'power3.inOut'
     })
 
     gsap.to(".mission h3", 0.8, {
@@ -751,16 +757,41 @@ $(document).ready(function(){
 
     ScrollTrigger.matchMedia({
         "(min-width: 1025px)": function(){
-            $('body').on('mousemove',function(e){
-                const winWidth = $(window).width()
-                const video = $('.intro_video').width()
-                const videoCenter = video / 2
+            let videoWidth = $('.intro_video').width(),
+                videoCenter = videoWidth / 2,
+                winWidth = $(window).width();
+
+            $('.intro, .intro_video_wrap, .space_container').on('mousemove',function(e){
                 const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
                 
-                gsap.to(".intro_video", 1, {
+                gsap.to(".intro_video", {
                     x: follow,
-                    ease: 'power2'
+                    'left': '0',
+                    xPercent: 0
                 })
+            })
+
+            $(window).scroll(function(){
+                if ($(window).scrollTop() > ($('.intro').height() * 0.1)) {
+                    $('.intro, .intro_video_wrap, .space_container').off('mousemove')
+                    
+                    gsap.to(".intro_video", {
+                        x: 'none',
+                        'left': '50%',
+                        xPercent: -50,
+                    })
+                }else{
+                    $('.intro, .intro_video_wrap, .space_container').on('mousemove',function(e){
+                        const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
+                        
+                        gsap.to(".intro_video", {
+                            x: follow,
+                            'left': '0',
+                            xPercent: 0,
+                            'transition-duration': '0.15s'
+                        })
+                    })
+                }
             })
 
             gsap.timeline({
@@ -768,23 +799,39 @@ $(document).ready(function(){
                     trigger: '.space_container',
                     start: 'top 90%',
                     end: 'top 50%',
-                    scrub: 0.5,
+                    scrub: true,
                 }
             }).fromTo(".intro_video", {
                 'width': 'calc(30% + ((1920px - 100vw) / 10))',
-                duration: 10,
-                ease: 'none',
                 'top': '0'
             }, {
                 'width': 'calc(90% + ((1920px - 100vw) / 10))',
-                duration: 10,
-                ease: 'none',
                 'top': '5%'
             },0)
+
+            gsap.to(".intro_video", {
+                scrollTrigger: {
+                    trigger: '.about',
+                    start: 'top 55%',
+                    end: 'top 40%',
+                    scrub: true
+                },
+                'filter': 'blur(10px)'
+            })
+
+            gsap.to(".intro_video", {
+                scrollTrigger: {
+                    trigger: '.about',
+                    start: 'top 45%',
+                    end: 'top 35%',
+                    scrub: true
+                },
+                opacity: 0
+            })
         },
 
         "(max-width: 1024px)": function(){
-            $('body').off('mousemove')
+            $('.intro, .intro_video_wrap, .space_container').off('mousemove')
 
             gsap.to(".intro_video", 1, {
                 x: 0,

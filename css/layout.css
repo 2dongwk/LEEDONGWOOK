@@ -266,6 +266,8 @@ nav li {
     width: calc(30% + ((1920px - 100vw) / 10));
     aspect-ratio: 1 / 0.53;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.15);
     overflow: hidden;
@@ -360,9 +362,9 @@ nav li {
 }
 
 @keyframes scaleUp {
-    0% {transform: scale(1) rotateX(-55deg);}
-    50% {transform: scale(1.6) rotateX(-55deg);}
-    100% {transform: scale(1) rotateX(-55deg);}
+    0% {transform: scale(1.4) rotateX(-55deg);}
+    50% {transform: scale(2) rotateX(-55deg);}
+    100% {transform: scale(1.4) rotateX(-55deg);}
 }
 
 .about_content h3 {

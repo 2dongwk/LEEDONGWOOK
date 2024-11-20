@@ -804,7 +804,7 @@ footer .phonenumber svg {
         position: relative;
     }
 
-    .intro_wrap li {font-size: 3rem;}
+    .intro_wrap li {font-size: 2.5rem;}
 
     .intro_wrap li.name {
         height: fit-content;
@@ -835,8 +835,8 @@ footer .phonenumber svg {
         transform-style: preserve-3d;
     }
 
-    .intro_wrap li:nth-child(1) {top: 1rem;}
-    .intro_wrap li:nth-child(3) {bottom: 4.4rem;}
+    .intro_wrap li:nth-child(1) {top: 1.2rem;}
+    .intro_wrap li:nth-child(3) {bottom: 4.6rem;}
 
     .intro_video_wrap {
         width: 95%;
@@ -904,7 +904,7 @@ footer .phonenumber svg {
     h1 li {font-size: 20px;}
     nav li {font-size: 15px;}
     .intro {min-height: 0;}
-    .intro_wrap li {font-size: 3.6rem;}
+    .intro_wrap li {font-size: 3.2rem;}
 
     .intro_wrap li.name {
         height: fit-content;
@@ -1073,7 +1073,7 @@ footer .phonenumber svg {
     h1 li {font-size: 20px;}
     nav li {font-size: 15px;}
     .intro {min-height: 0;}
-    .intro_wrap li {font-size: 4rem;}
+    .intro_wrap li {font-size: 3.6rem;}
 
     .intro_wrap li.name {
         height: fit-content;
@@ -1104,8 +1104,8 @@ footer .phonenumber svg {
         transform-style: preserve-3d;
     }
 
-    .intro_wrap li:nth-child(1) {top: 10rem;}
-    .intro_wrap li:nth-child(3) {bottom: 14rem;}
+    .intro_wrap li:nth-child(1) {top: 11rem;}
+    .intro_wrap li:nth-child(3) {bottom: 16rem;}
 
     .intro_video_wrap {
         width: 95%;

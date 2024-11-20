@@ -88,12 +88,23 @@ $(document).ready(function(){
         }
     })
 
-    gsap.from(".intro h2", 1.2, {
-        delay: 6.2,
-        rotateX: -90,
-        ease: 'expo.out',
-        stagger: 0.1
-    })
+    if ($(window).width() > 1024) {
+        gsap.from(".intro h2", 1.2, {
+            delay: 6.2,
+            rotateX: -90,
+            ease: 'expo.out',
+            stagger: 0.1
+        })
+    } else {
+        gsap.from(".intro h2", 1.2, {
+            delay: 6.2,
+            rotateX: -90,
+            'filter':'blur(15px)',
+            opacity: 0,
+            ease: 'circ.out',
+            stagger: 0.06
+        })
+    }
 
     gsap.from(".intro_text p, .intro_text span", 0.8, {
         delay: 8.1,
@@ -765,13 +776,14 @@ $(document).ready(function(){
                 const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
                 
                 gsap.to(".intro_video", {
+                    display: 'block',
                     x: follow,
                     'left': '0',
                     xPercent: 0
                 })
             })
 
-            $(window).scroll(function(){
+            $(window).on('scroll',function(){
                 if ($(window).scrollTop() > ($('.intro').height() * 0.1)) {
                     $('.intro, .intro_video_wrap, .space_container').off('mousemove')
                     
@@ -780,7 +792,7 @@ $(document).ready(function(){
                         'left': '50%',
                         xPercent: -50,
                     })
-                }else{
+                } else {
                     $('.intro, .intro_video_wrap, .space_container').on('mousemove',function(e){
                         const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
                         
@@ -831,15 +843,12 @@ $(document).ready(function(){
         },
 
         "(max-width: 1024px)": function(){
-            $('.intro, .intro_video_wrap, .space_container').off('mousemove')
-
-            gsap.to(".intro_video", 1, {
-                x: 0,
-                'top': '0',
-                'left':'0',
-                ease: 'expo.out'
+            $('.intro, .intro_video_wrap, .space_container, body').off('mousemove')
+            
+            gsap.to(".intro_video", {
+                display: 'none'
             })
-        },
+        }
     })
 })
 

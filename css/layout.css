@@ -387,6 +387,13 @@ nav li {
     position: absolute;
     top: 0;
     left: 8%;
+    animation: missionUpdown 4s ease-in-out infinite;
+}
+
+@keyframes missionUpdown {
+    0% {transform: translateY(-0.6rem);}
+    50% {transform: translateY(0.6rem);}
+    100% {transform: translateY(-0.6rem);}
 }
 
 .mission p {
@@ -409,6 +416,13 @@ nav li {
     position: absolute;
     top: 6%;
     right: 8%;
+    animation: toolsUpdown 3.5s ease-in-out infinite;
+}
+
+@keyframes toolsUpdown {
+    0% {transform: translateY(0.6rem);}
+    50% {transform: translateY(-0.6rem);}
+    100% {transform: translateY(0.6rem);}
 }
 
 .carousel {

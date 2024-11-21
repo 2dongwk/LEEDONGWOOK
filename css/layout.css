@@ -143,8 +143,8 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
 }
 
 header {
-    width: 90%;
-    height: 60px;
+    width: 95%;
+    height: 40px;
     position: fixed;
     top: 16px;
     left: 50%;
@@ -154,7 +154,11 @@ header {
     z-index: 999;
 }
 
-h1 {float: left;}
+h1 {
+    float: left;
+    transform: translate(-0.8%, 0);
+}
+
 nav {float: right;}
 h1, nav {height: 100%;}
 
@@ -217,8 +221,8 @@ nav li {
 
 .intro_wrap li.name {
     top: calc(50% - 60px);
-    left: 49%;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-50.98%, -50%);
     gap: 2rem;
     animation: nameUp 0.8s forwards;
     animation-delay: 7.9s;
@@ -231,7 +235,7 @@ nav li {
 }
 
 .intro_wrap li.name h2 {
-    font-size: 12.5rem;
+    font-size: 12.75rem;
     letter-spacing: -1rem;
     z-index: 0;
     transform-style: preserve-3d;

@@ -559,7 +559,7 @@ $(document).ready(function(){
     let elementsCount = 0
     const elementsPerCircle = 20
     let nextElement = 0
-    const radius = 150
+    let radius = window.innerWidth * 0.1
     let lastUpdate = Date.now()
     const updateTime = 200
 
@@ -591,6 +591,7 @@ $(document).ready(function(){
         center.x = 0.69 * canvas.width
         center.y = 0.5 * canvas.height
         maxSize = 0.9 * canvas.width
+        radius = window.innerWidth * 0.1
     }
 
     function animate () {
@@ -648,7 +649,7 @@ $(document).ready(function(){
         }
 
         get size () {
-            return this.scale * 10
+            return this.scale * radius * 0.07
         }
 
         grow () {

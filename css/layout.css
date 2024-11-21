@@ -853,8 +853,8 @@ footer .phonenumber svg {
         transform-style: preserve-3d;
     }
 
-    .intro_wrap li:nth-child(1) {top: 1.2rem;}
-    .intro_wrap li:nth-child(3) {bottom: 4.6rem;}
+    .intro_wrap li:nth-child(1) {top: calc(50% - 29rem);}
+    .intro_wrap li:nth-child(3) {top: calc(50% + 21rem);}
 
     .intro_video_wrap {
         width: 95%;
@@ -953,8 +953,8 @@ footer .phonenumber svg {
         transform-style: preserve-3d;
     }
 
-    .intro_wrap li:nth-child(1) {top: 6rem;}
-    .intro_wrap li:nth-child(3) {bottom: 10rem;}
+    .intro_wrap li:nth-child(1) {top: calc(50% - 34rem);}
+    .intro_wrap li:nth-child(3) {top: calc(50% + 24rem);}
 
     .intro_video_wrap {
         width: 95%;
@@ -1134,8 +1134,8 @@ footer .phonenumber svg {
         transform-style: preserve-3d;
     }
 
-    .intro_wrap li:nth-child(1) {top: 11rem;}
-    .intro_wrap li:nth-child(3) {bottom: 16rem;}
+    .intro_wrap li:nth-child(1) {top: calc(50% - 38rem);}
+    .intro_wrap li:nth-child(3) {top: calc(50% + 26rem);}
 
     .intro_video_wrap {
         width: 95%;

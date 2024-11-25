@@ -683,7 +683,7 @@ $(document).ready(function(){
     }
 
     function dragMove(position) {
-        carouselVelocity = Math.atan2(position.x - carouselDragPosition, carouselRadius * 2) * -50 / Math.PI;
+        carouselVelocity = Math.atan2(position.x - carouselDragPosition, carouselRadius * 2) * -75 / Math.PI;
         carouselDragPosition = position.x;
     }
 
@@ -695,7 +695,7 @@ $(document).ready(function(){
         carouselRotation += carouselVelocity;
     
         if(!carouselIsDragging) {
-            carouselVelocity *= 0.90;
+            carouselVelocity *= 0.92;
         }
         
         carouselTilt += (carouselVelocity * 0.1 - carouselTilt) / 10;

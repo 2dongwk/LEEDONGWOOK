@@ -488,7 +488,7 @@ nav li {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 100rem;
+    border-radius: 999rem;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     font-size: 1rem;

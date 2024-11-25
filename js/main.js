@@ -127,9 +127,9 @@ $(document).ready(function(){
     })
 
     $('nav li').mouseover(function(){
-        $(this).stop().animate({'opacity':'1'},200).siblings('li').stop().animate({'opacity':'0.4'},200)
+        $(this).stop().animate({'opacity':'1'},100).siblings('li').stop().animate({'opacity':'0.4'},100)
     }).mouseout(function(){
-        $('nav li').stop().animate({'opacity':'1'},200)
+        $('nav li').stop().animate({'opacity':'1'},300)
     })
 
     $('nav li').click(function(){
@@ -683,7 +683,7 @@ $(document).ready(function(){
     }
 
     function dragMove(position) {
-        carouselVelocity = Math.atan2(position.x - carouselDragPosition, carouselRadius * 2) * -75 / Math.PI;
+        carouselVelocity = Math.atan2(position.x - carouselDragPosition, carouselRadius * 2) * -50 / Math.PI;
         carouselDragPosition = position.x;
     }
 
@@ -695,7 +695,7 @@ $(document).ready(function(){
         carouselRotation += carouselVelocity;
     
         if(!carouselIsDragging) {
-            carouselVelocity *= 0.92;
+            carouselVelocity *= 0.90;
         }
         
         carouselTilt += (carouselVelocity * 0.1 - carouselTilt) / 10;

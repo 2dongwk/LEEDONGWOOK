@@ -127,7 +127,7 @@ $(document).ready(function(){
     })
 
     $('nav li').mouseover(function(){
-        $(this).stop().animate({'opacity':'1'},100).siblings('li').stop().animate({'opacity':'0.4'},100)
+        $(this).stop().animate({'opacity':'1'},150).siblings('li').stop().animate({'opacity':'0.4'},50)
     }).mouseout(function(){
         $('nav li').stop().animate({'opacity':'1'},300)
     })

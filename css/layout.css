@@ -55,8 +55,6 @@ body {font-family: 'Pretendard Variable'; background-color: #ffffff; overflow-x:
 h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
 .intro_wrap p, .intro_wrap span, .tsl_cover, .moog_cover {font-family: termina, sans-serif; font-weight: 600; letter-spacing: -0.07rem;}
 
-.wrap { opacity: 0; }
-
 .loading-container {
     width: 100vw;
     height: 100vh;
@@ -142,8 +140,16 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
     z-index: -1;
 }
 
+.wrap {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    opacity: 0;
+}
+
 header {
     width: 95%;
+    max-width: 1920px;
     height: 40px;
     position: fixed;
     top: 16px;
@@ -261,6 +267,7 @@ nav li {
 
 .intro_video_wrap {
     width: 100%;
+    max-width: 1920px;
     height: 200vh;
     position: absolute;
     top: 45%;

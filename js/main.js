@@ -552,6 +552,11 @@ $(document).ready(function(){
             scale: 0,
             ease: 'expo.out'
         })
+
+        gsap.to('footer button', 0.2, {
+            scale: 1,
+            ease: 'expo.out'
+        })
     })
 
     $('footer button').mousedown(function(){

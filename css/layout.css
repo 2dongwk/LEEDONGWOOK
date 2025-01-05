@@ -806,7 +806,7 @@ footer .phonenumber svg {
     .foot_wrap {transform: translate(0, -48%);}
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 1025px){
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
     .intro {
         width: 100%;
         height: 100vh;
@@ -821,7 +821,7 @@ footer .phonenumber svg {
     .foot_wrap {transform: translate(0, -48%);}
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px){
+@media only screen and (max-width: 1023px) and (min-width: 768px){
     .intro {
         width: 100%;
         height: 100vh;
@@ -925,7 +925,7 @@ footer .phonenumber svg {
     .copyright {font-size: 1.6rem;}
 }
 
-@media only screen and (max-width: 768px) and (min-width: 621px){
+@media only screen and (max-width: 767px) and (min-width: 621px){
     h1 li {font-size: 20px;}
     nav li {font-size: 15px;}
     .intro {min-height: 0;}

@@ -88,7 +88,7 @@ $(document).ready(function(){
         }
     })
 
-    if ($(window).width() > 1024) {
+    if ($(window).width() > 1023) {
         gsap.from(".intro h2", 1.2, {
             delay: 6.2,
             rotateX: -90,
@@ -768,7 +768,7 @@ $(document).ready(function(){
     //------------------ CodePen Code ------------------//
 
     ScrollTrigger.matchMedia({
-        "(min-width: 1025px)": function(){
+        "(min-width: 1024px)": function(){
             let videoWidth = $('.intro_video').width(),
                 videoCenter = videoWidth / 2,
                 winWidth = $(window).width();
@@ -843,7 +843,7 @@ $(document).ready(function(){
             })
         },
 
-        "(max-width: 1024px)": function(){
+        "(max-width: 1023px)": function(){
             $('.intro, .intro_video_wrap, .space_container, body').off('mousemove')
             
             gsap.to(".intro_video", {

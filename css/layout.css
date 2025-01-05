@@ -175,12 +175,17 @@ h1 ul, nav ul {
     align-items: center;
 }
 
-h1 ul {gap: 0.2rem;}
+h1 ul {
+    gap: 0.2rem;
+    perspective: 20rem;
+}
+
 nav ul {gap: 0.5rem;}
 
 h1 li {
     font-size: 24px;
     letter-spacing: -1.4px;
+    transform-style: preserve-3d;
     cursor: pointer;
 }
 

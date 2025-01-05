@@ -166,15 +166,21 @@ $(document).ready(function(){
         lenis.start()
     })
 
-    $('h1').mouseover(function(event){
-        gsap.to("h1 li", 2, {
-            rotateX: 360,
-            ease: 'expo.out',
-            stagger: 0.1,
-            onComplete: function() {
-                gsap.set("h1 li", {rotateX: 0})
-            }
-        })
+    $('h1').mouseover(function(){
+        if (!$('h1').hasClass('animated')) {
+            $('h1').addClass('animated')
+            
+            gsap.to("h1 li", 2, {
+                rotateX: 360,
+                ease: 'expo.out',
+                stagger: 0.1,
+                onComplete: function() {
+                    gsap.set("h1 li", {rotateX: 0})
+                    
+                    $('h1').removeClass('animated')
+                }
+            })
+        }
     })
 
     gsap.to(".intro_text", {
@@ -392,8 +398,23 @@ $(document).ready(function(){
     })
 
     $('.resume a').mouseover(function(){
-        gsap.from(this, 0.6, { delay: 0.3, '--width': 0, ease: 'expo.inOut' })
-        gsap.from(this, 0.8, { '--transform': 'scaleX(1)', ease: 'expo.inOut' })
+        if (!$('.resume a').hasClass('animated')) {
+            $('.resume a').addClass('animated')
+
+            gsap.from(this, 0.8, {
+                '--transform': 'scaleX(1)',
+                ease: 'expo.inOut'
+            })
+
+            gsap.from(this, 0.6, {
+                delay: 0.3,
+                '--width': 0,
+                ease: 'expo.inOut',
+                onComplete: function() {
+                    $('.resume a').removeClass('animated')
+                }
+            })
+        }
     })
 
     gsap.from(".work_title li", 1, {
@@ -417,25 +438,31 @@ $(document).ready(function(){
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     document.querySelector(".contact_text").onmouseover = event => {
-        let iterations = 0
-        
-        const interval = setInterval(() => {
-            event.target.innerText = event.target.innerText.split("")
-                .map((letter, index) => {
-                    if(index < iterations){
-                        return event.target.dataset.value[index]
-                    }
-
-                    return letters[Math.floor(Math.random() * 26)]
-                })
-                .join("")
+        if (!$(".contact_text").hasClass('animated')) {
+            $(".contact_text").addClass('animated')
             
-            if(iterations >= event.target.dataset.value.length){
-                clearInterval(interval)
-            }
+            let iterations = 0
+            
+            const interval = setInterval(() => {
+                event.target.innerText = event.target.innerText.split("")
+                    .map((letter, index) => {
+                        if(index < iterations){
+                            return event.target.dataset.value[index]
+                        }
     
-            iterations += 1 / 2
-        }, 30)
+                        return letters[Math.floor(Math.random() * 26)]
+                    })
+                    .join("")
+                
+                if(iterations >= event.target.dataset.value.length){
+                    clearInterval(interval)
+                    $(".contact_text").removeClass('animated')
+                }
+        
+                iterations += 1 / 2
+
+            }, 30)
+        }
     }
 
     function copyToClipboard(val) {
@@ -528,12 +555,12 @@ $(document).ready(function(){
     })
 
     $('footer button').mousedown(function(){
-        gsap.to(".foot_cursor", 0.2, {
-            scale: 0.85,
+        gsap.to(this, 0.2, {
+            scale: 0.95,
             ease: 'expo.out'
         })
     }).mouseup(function(){
-        gsap.to(".foot_cursor", 0.2, {
+        gsap.to(this, 0.2, {
             scale: 1,
             ease: 'expo.out'
         })

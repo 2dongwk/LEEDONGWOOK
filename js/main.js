@@ -170,9 +170,9 @@ $(document).ready(function(){
         if (!$('h1').hasClass('animated')) {
             $('h1').addClass('animated')
             
-            gsap.to("h1 li", 2, {
+            gsap.to("h1 li", 1, {
                 rotateX: 360,
-                ease: 'expo.out',
+                ease: 'power1.out',
                 stagger: 0.1,
                 onComplete: function() {
                     gsap.set("h1 li", {rotateX: 0})

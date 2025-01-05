@@ -703,52 +703,52 @@ $(document).ready(function(){
         carouselPivot.style.transform = 'translateZ(-'+ carouselRadius * 2 +'px) rotateX(' + -carouselTilt + 'deg) rotateY(' + carouselRotation + 'deg) ';
     }
 
-    (function(){
+    (function() {
         let location = function(evt) {
-        let t1 = evt.touches, t2 = evt.changedTouches;
-        let s = (t1 && t1[0]) || (t2 && t2[0]) || evt;
-        return {x:s.pageX, y:s.pageY};
-    };
+            let t1 = evt.touches, t2 = evt.changedTouches;
+            let s = (t1 && t1[0]) || (t2 && t2[0]) || evt;
+            return {x:s.pageX, y:s.pageY};
+        };
     
-    let prevent = function(evt) {
-        evt.preventDefault();
-    };
+        let prevent = function(evt) {
+            evt.preventDefault();
+        };
 
-    let handler = function(evt) {
-        switch(evt.type) {
-        case 'mousedown':
-            add(document, ['mousemove', 'mouseup']);
-        case 'mousedown':
-        case 'touchstart':
-            prevent(evt);
-            dragStart(location(evt));
-            break;
-        case 'mousemove':
-        case 'touchmove':
-            dragMove(location(evt));        
-            break;
-        case 'mouseup':
-            remove(document, ['mousemove', 'mouseup']);
-        case 'mouseup':
-        case 'touchend':
-        case 'touchcancel':
-            dragEnd(location(evt));
-            break;
-        }
-    };
-    let add = function(target, events) {
-        for(let i = 0; i<events.length; i++) {
-        target.addEventListener(events[i], handler);
-        }
-    };
-    let remove = function(target, events) {
-        for(let i = 0; i<events.length; i++) {
-        target.removeEventListener(events[i], handler);
-        }
-    };
-    
-    add(carousel, ['mousedown', 'touchstart', 'touchmove', 'touchend', 'touchcancel']);
-    carousel.ondragstart = function() { return false; };
+        let handler = function(evt) {
+            switch(evt.type) {
+            case 'mousedown':
+                add(document, ['mousemove', 'mouseup']);
+            case 'mousedown':
+            case 'touchstart':
+                prevent(evt);
+                dragStart(location(evt));
+                break;
+            case 'mousemove':
+            case 'touchmove':
+                dragMove(location(evt));        
+                break;
+            case 'mouseup':
+                remove(document, ['mousemove', 'mouseup']);
+            case 'mouseup':
+            case 'touchend':
+            case 'touchcancel':
+                dragEnd(location(evt));
+                break;
+            }
+        };
+        let add = function(target, events) {
+            for(let i = 0; i<events.length; i++) {
+            target.addEventListener(events[i], handler);
+            }
+        };
+        let remove = function(target, events) {
+            for(let i = 0; i<events.length; i++) {
+            target.removeEventListener(events[i], handler);
+            }
+        };
+
+        add(carousel, ['mousedown', 'touchstart', 'touchmove', 'touchend', 'touchcancel']);
+        carousel.ondragstart = function() { return false; };
     })();
 
     (function() {

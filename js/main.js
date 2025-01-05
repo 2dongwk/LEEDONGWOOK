@@ -445,14 +445,14 @@ $(document).ready(function(){
             
             const interval = setInterval(() => {
                 event.target.innerText = event.target.innerText.split("")
-                    .map((letter, index) => {
-                        if(index < iterations){
-                            return event.target.dataset.value[index]
-                        }
-    
-                        return letters[Math.floor(Math.random() * 26)]
-                    })
-                    .join("")
+                .map((letter, index) => {
+                    if(index < iterations){
+                        return event.target.dataset.value[index]
+                    }
+
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("")
                 
                 if(iterations >= event.target.dataset.value.length){
                     clearInterval(interval)
@@ -823,7 +823,7 @@ $(document).ready(function(){
                     gsap.to(".intro_video", {
                         x: 'none',
                         'left': '50%',
-                        xPercent: -50,
+                        xPercent: -50
                     })
                 } else {
                     $('.intro, .intro_video_wrap, .space_container').on('mousemove',function(e){
@@ -852,7 +852,7 @@ $(document).ready(function(){
             }, {
                 'width': 'calc(90% + ((1920px - 100vw) / 10))',
                 'top': '5%'
-            },0)
+            }, 0)
 
             gsap.to(".intro_video", {
                 scrollTrigger: {

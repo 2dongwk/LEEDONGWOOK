@@ -484,18 +484,7 @@ $(document).ready(function(){
         opacity: 0,
     })
 
-    gsap.from("#phonenumber", 1.5, {
-        scrollTrigger: {
-            trigger: '.foot_wrap',
-            start: 'top 80%',
-        },
-        delay: 0.3,
-        yPercent: 15,
-        ease: 'power2',
-        opacity: 0,
-    })
-
-    gsap.from("#email", 1.5, {
+    gsap.from("footer button", 1.5, {
         scrollTrigger: {
             trigger: '.foot_wrap',
             start: 'top 80%',
@@ -504,42 +493,6 @@ $(document).ready(function(){
         yPercent: 25,
         ease: 'power2',
         opacity: 0,
-    })
-    
-    const modal = $('.copy_modal')
-
-    function modal_off(){
-        modal.fadeOut(400)
-    }
-
-    function modal_on_phonenumber(){
-        modal.fadeOut(0)
-        clearTimeout(modal_off)
-
-        $('.phonenumber_copy').stop().fadeIn(0, function(){
-            setTimeout(modal_off, 1000)
-        })
-    }
-
-    function modal_on_email(){
-        modal.fadeOut(0)
-        clearTimeout(modal_off)
-
-        $('.email_copy').stop().fadeIn(0, function(){
-            setTimeout(modal_off, 1000)
-        })
-    }
-
-    $('#phonenumber').click(function(){
-        copyToClipboard('+821034394906')
-
-        modal_on_phonenumber()
-    })
-
-    $('#email').click(function(){
-        copyToClipboard('2dongwk@gmail.com')
-
-        modal_on_email()
     })
 
     $('footer button').mouseenter(function(){
@@ -572,13 +525,51 @@ $(document).ready(function(){
     })
 
     $('footer button').mousemove(function(e){
-        const cursorX = e.pageX - 100
-        const cursorY = e.pageY - 30
+        const cursorX = e.pageX - 54
+        const cursorY = e.pageY + 40
 
         gsap.to(".foot_cursor", 0, {
             x: cursorX,
             y: cursorY
         })
+    })
+
+    $('footer button').click(function(){
+        copyToClipboard('2dongwk@gmail.com')
+    
+        if (!$('.cursor_text_wrapper').hasClass('animated')) {
+            $('.cursor_text_wrapper').addClass('animated')
+    
+            gsap.to(".cursor_text:nth-child(1)", 0.6, {
+                yPercent: -100,
+                ease: 'power3.out',
+                onComplete: () => {
+                    gsap.set(".cursor_text:nth-child(1)", { yPercent: 100 })
+                }
+            })
+        
+            gsap.to(".cursor_text:nth-child(1)", 0.6, {
+                delay: 1,
+                yPercent: 0,
+                ease: 'power3.out'
+            })
+        
+            gsap.to(".cursor_text:nth-child(2)", 0.6, {
+                yPercent: -100,
+                ease: 'power3.out'
+            })
+        
+            gsap.to(".cursor_text:nth-child(2)", 0.6, {
+                delay: 1,
+                yPercent: -200,
+                ease: 'power3.out',
+                onComplete: () => {
+                    gsap.set(".cursor_text:nth-child(2)", { yPercent: 0 })
+    
+                    $('.cursor_text_wrapper').removeClass('animated')
+                }
+            })
+        }
     })
 
     //------------------ CodePen Code ------------------//

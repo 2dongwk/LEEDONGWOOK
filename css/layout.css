@@ -704,7 +704,7 @@ footer {
 .contact_text {
     width: fit-content;
     margin: 0 auto;
-    margin-bottom: 0.6rem;
+    transform: translateY(-60%);
     font-family: 'Space Mono', monospace;
     font-size: 1.6rem;
     font-weight: 600;
@@ -718,14 +718,15 @@ footer button {
     margin: 0 auto;
     border: none;
     background-color: transparent;
-    cursor: none;
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: 600;
-    letter-spacing: -0.3rem;
+    letter-spacing: -0.5rem;
     color: #000000;
+    /* cursor: none; */
+    cursor: pointer;
 }
 
-footer .phonenumber {
+/* footer .phonenumber {
     padding-left: 6rem;
     position: relative;
     font-size: 13.6rem;
@@ -746,7 +747,7 @@ footer .phonenumber span {
 footer .phonenumber svg {
     width: 100%;
     height: 100%;
-}
+} */
 
 .copyright {
     width: 90%;
@@ -758,6 +759,33 @@ footer .phonenumber svg {
     text-align: center;
 }
 
+.foot_cursor {
+    width: 120px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    background-color: #000;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    mix-blend-mode: difference;
+    overflow: hidden;
+}
+
+.cursor_text_wrapper {
+    width: max-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* 
 .foot_cursor {
     width: 200px;
     height: 60px;
@@ -783,7 +811,6 @@ footer .phonenumber svg {
     font-weight: 500;
     letter-spacing: -0.02em;
     color: #fff;
-    mix-blend-mode: difference;
 }
 
 .copy_modal {
@@ -802,7 +829,7 @@ footer .phonenumber svg {
     color: #ffffff;
     z-index: 999;
     display: none;
-}
+} */
 
 @media only screen and (max-width: 1600px) and (min-width: 1201px){
     .intro {

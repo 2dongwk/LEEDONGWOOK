@@ -742,7 +742,7 @@ footer button {
 
 .foot_cursor {
     width: 120px;
-    height: 20px;
+    height: 24px;
     position: absolute;
     top: 0;
     left: 0;
@@ -765,6 +765,11 @@ footer button {
     letter-spacing: 0;
     text-align: center;
     color: #fff;
+}
+
+.cursor_text {
+    height: 20px;
+    margin: 2px 0;
 }
 
 @media only screen and (max-width: 1600px) and (min-width: 1201px){

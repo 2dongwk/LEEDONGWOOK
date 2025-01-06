@@ -551,9 +551,9 @@ $(document).ready(function(){
         if (!$('.cursor_text_wrapper').hasClass('animated')) {
             $('.cursor_text_wrapper').addClass('animated')
     
-            gsap.to(".cursor_text:nth-child(1)", 0.6, {
+            gsap.to(".cursor_text:nth-child(1)", 0.3, {
                 yPercent: -100,
-                ease: 'power3.out',
+                ease: 'expo.out',
                 onComplete: () => {
                     gsap.set(".cursor_text:nth-child(1)", { yPercent: 100 })
                 }
@@ -565,9 +565,9 @@ $(document).ready(function(){
                 ease: 'power3.out'
             })
         
-            gsap.to(".cursor_text:nth-child(2)", 0.6, {
+            gsap.to(".cursor_text:nth-child(2)", 0.8, {
                 yPercent: -100,
-                ease: 'power3.out'
+                ease: 'elastic.out'
             })
         
             gsap.to(".cursor_text:nth-child(2)", 0.6, {

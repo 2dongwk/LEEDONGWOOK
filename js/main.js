@@ -33,7 +33,7 @@ $(document).ready(function(){
 
     startLoader();
 
-    gsap.to("html, body", { scrollTop: 0 });
+    gsap.to("html, body", { scrollTop: 0 })
 
     gsap.set(".intro_video", {
         x: 'none',
@@ -140,6 +140,7 @@ $(document).ready(function(){
         const contact = $('footer').offset().top + $('footer').height() - $(window).height()
 
         lenis.stop()
+        lenis.start()
 
         if(anchor == 0){
             gsap.to("html, body", 1, {
@@ -162,25 +163,35 @@ $(document).ready(function(){
                 ease: 'expo.out'
             })
         }
-
-        lenis.start()
     })
 
     $('h1').mouseover(function(){
         if (!$('h1').hasClass('animated')) {
             $('h1').addClass('animated')
-            
+
             gsap.to("h1 li", 1, {
                 rotateX: 360,
                 ease: 'power1.out',
                 stagger: 0.1,
-                onComplete: function() {
+                onComplete: () => {
                     gsap.set("h1 li", {rotateX: 0})
                     
                     $('h1').removeClass('animated')
                 }
             })
         }
+    })
+
+    $('h1').click(function(){
+        const intro = $('.intro').offset().top
+
+        lenis.stop()
+        lenis.start()
+
+        gsap.to("html, body", 1, {
+            scrollTop: intro,
+            ease: 'expo.out'
+        })
     })
 
     gsap.to(".intro_text", {

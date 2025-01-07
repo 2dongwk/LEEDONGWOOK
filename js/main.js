@@ -408,24 +408,32 @@ $(document).ready(function(){
         ease: 'none'
     })
 
-    $('.resume a').mouseover(function(){
+    function resumeAnimation() {
         if (!$('.resume a').hasClass('animated')) {
             $('.resume a').addClass('animated')
 
-            gsap.from(this, 0.8, {
+            gsap.from('.resume a', 0.8, {
                 '--transform': 'scaleX(1)',
                 ease: 'expo.inOut'
             })
 
-            gsap.from(this, 0.6, {
+            gsap.from('.resume a', 0.6, {
                 delay: 0.3,
                 '--width': 0,
                 ease: 'expo.inOut',
-                onComplete: function() {
-                    $('.resume a').removeClass('animated')
-                }
+                onComplete: function() { $('.resume a').removeClass('animated') }
             })
         }
+    }
+
+    let resumeAnimate;
+
+    $('.resume a').mouseover(function(){
+        resumeAnimation()
+
+        resumeAnimate = setInterval(resumeAnimation, 2500)
+    }).mouseout(function(){
+        clearInterval(resumeAnimate)
     })
 
     gsap.from(".work_title li", 1, {

@@ -324,7 +324,7 @@ $(document).ready(function(){
         const itemIndex = $(this).index();
 
         if(itemIndex == 6 || itemIndex == 12){
-            $('.carousel_tooltip').html('PLUG-IN, AUTO-LAYOUT')
+            $('.carousel_tooltip').html('PLUG-IN, AUTO-LAYOUT, COMPONENT')
         }else if(itemIndex == 7 || itemIndex == 13){
             $('.carousel_tooltip').html('GSAP, Jquery')
         }else if(itemIndex == 8 || itemIndex == 14){

@@ -43,8 +43,8 @@ gsap.set(".intro_video", {
 gsap.to(".pre-loader", {
     scale: 0.9,
     delay: 1.5,
-    duration: 3.5,
-    ease: 'power4',
+    duration: 7,
+    ease: 'expo.out'
 })
 
 gsap.to(".ml16 p", {

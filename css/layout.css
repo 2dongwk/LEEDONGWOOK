@@ -51,7 +51,7 @@ img {width: 100%; user-select: none; pointer-events: none;}
 
 .clearfix::after {display: block; content: ""; clear: both;}
 
-body {font-family: 'Pretendard Variable'; background-color: #ffffff; overflow-x: hidden;}
+body {font-family: 'Pretendard Variable'; -webkit-font-smoothing: antialiased; background-color: #ffffff; overflow-x: hidden;}
 h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans Variable'; letter-spacing: -0.15rem;}
 .intro_wrap p, .intro_wrap span, .tsl_cover, .moog_cover {font-family: termina, sans-serif; font-weight: 600; letter-spacing: -0.07rem;}
 

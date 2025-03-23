@@ -102,7 +102,7 @@ h1, h2, .title li, .contact_text, footer button, .copy {font-family: 'WorkSans V
 
 .copy {
     font-size: 36px;
-    font-weight: 600;
+    font-weight: 650;
     line-height: 1;
 }
 
@@ -189,7 +189,8 @@ nav ul {gap: 0.5rem;}
 
 h1 li {
     font-size: 24px;
-    letter-spacing: -1.4px;
+    font-weight: 750;
+    letter-spacing: -1.6px;
     transform-style: preserve-3d;
     cursor: pointer;
 }
@@ -197,8 +198,8 @@ h1 li {
 nav li {
     line-height: 100%;
     font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.2px;
+    font-weight: 450;
+    letter-spacing: -0.1px;
     cursor: pointer;
 }
 
@@ -487,6 +488,7 @@ nav li {
 .carousel_item p {
     margin-top: 56px;
     margin-left: 60px;
+    font-weight: 450;
 }
 
 .carousel_item img, .tools_mobile_item img {
@@ -511,7 +513,7 @@ nav li {
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 570;
     color: #494949;
     transform: scale(0);
     user-select: none;
@@ -539,7 +541,7 @@ nav li {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 770;
     --transform: scaleX(0);
 }
 
@@ -714,7 +716,7 @@ footer {
     transform: translateY(-60%);
     font-family: 'Space Mono', monospace;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0;
     user-select: none;
 }
@@ -739,6 +741,8 @@ footer button {
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 16px;
+    font-weight: 470;
+    letter-spacing: -0.1px;
     text-align: center;
 }
 
@@ -751,7 +755,7 @@ footer button {
     transform: scale(0);
     background-color: #000;
     font-size: 14px;
-    letter-spacing: 0.4px;
+    font-weight: 500;
     mix-blend-mode: difference;
     overflow: hidden;
     user-select: none;
@@ -764,7 +768,6 @@ footer button {
     left: 50%;
     transform: translateX(-50%);
     font-size: 15px;
-    letter-spacing: 0;
     text-align: center;
     color: #fff;
 }
@@ -772,6 +775,7 @@ footer button {
 .cursor_text {
     height: 20px;
     margin: 2px 0;
+    letter-spacing: -0.2px;
 }
 
 @media only screen and (max-width: 1600px) and (min-width: 1201px){

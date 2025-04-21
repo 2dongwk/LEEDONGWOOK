@@ -34,12 +34,6 @@ startLoader();
 
 gsap.to("html, body", { scrollTop: 0 })
 
-gsap.set(".intro_video", {
-    x: 'none',
-    'left': '50%',
-    xPercent: -50,
-})
-
 gsap.to(".pre-loader", {
     scale: 0.9,
     delay: 1.5,
@@ -83,7 +77,6 @@ gsap.to(".wrap", {
     onComplete: function(){
         lenis.start();
         $('body').css({'background-color':'#ffffff'})
-        $('.intro_video').css({'width':'calc(30% + ((1920px - 100vw) / 10))'})
     }
 })
 
@@ -118,11 +111,140 @@ gsap.from("header", 0.8, {
     display: 'none'
 })
 
-gsap.from(".intro_video", 1, {
+gsap.from(".intro_video_wrap", 0.5, {
     delay: 8,
     scale: 0,
     display: 'none',
-    ease: 'expo.out'
+    ease: 'power3.out',
+    onComplete: () => {
+        if ( window.innerWidth >= 1024 ) {
+            const videoContainer = document.querySelector(".intro_video_wrap");
+        
+            const breakpoints = [
+                { maxWidth: 1000, translateY: -110, movMultiplier: 450 },
+                { maxWidth: 1100, translateY: -105, movMultiplier: 500 },
+                { maxWidth: 1200, translateY: -100, movMultiplier: 550 },
+                { maxWidth: 1300, translateY: -95, movMultiplier: 600 }
+            ];
+            
+            const getInitialValues = () => {
+                const width = window.innerWidth;
+            
+                for ( const bp of breakpoints ) {
+                    if ( width <= bp.maxWidth ) {
+                        return {
+                            translateY: bp.translateY,
+                            movementMultiplier: bp.movMultiplier
+                        };
+                    }
+                }
+            
+                return {
+                    translateY: -90,
+                    movementMultiplier: 650
+                };
+            }
+            
+            const initialValues = getInitialValues();
+            
+            const animationState = {
+                scrollProgress: 0,
+                initialTranslateY: initialValues.translateY,
+                currentTranslateY: initialValues.translateY,
+                movementMultiplier: initialValues.movementMultiplier,
+                scale: 0.4,
+                targetMouseX: 0,
+                currentMouseX: 0
+            };
+            
+            window.addEventListener("resize", () => {
+                const newValues = getInitialValues();
+            
+                animationState.initialTranslateY = newValues.translateY;
+                animationState.movementMultiplier = newValues.movementMultiplier;
+            
+                if ( animationState.scrollProgress === 0 ) {
+                    animationState.currentTranslateY = newValues.translateY;
+                }
+            })
+            
+            gsap.to(".intro_video_wrap", 1, {
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: 'top bottom',
+                    end: 'top 5%',
+                    scrub: true,
+                    onUpdate: (self) => {
+                        animationState.scrollProgress = self.progress;
+            
+                        animationState.currentTranslateY = gsap.utils.interpolate(
+                            animationState.initialTranslateY,
+                            0,
+                            animationState.scrollProgress
+                        );
+            
+                        animationState.scale = gsap.utils.interpolate(
+                            0.4,
+                            1,
+                            animationState.scrollProgress
+                        );
+                    }
+                }
+            });
+            
+            document.addEventListener("mousemove", (e) => {
+                animationState.targetMouseX = (e.pageX / window.innerWidth - 0.5) * ((window.innerWidth * 0.0012) + 0.5);
+            
+                const animate = () => {
+                    if ( window.innerWidth < 1024 ) return;
+            
+                    const {
+                        scale,
+                        targetMouseX,
+                        currentMouseX,
+                        currentTranslateY,
+                        movementMultiplier
+                    } = animationState;
+            
+                    const scaleMovementMultiplier = (1 - scale) * movementMultiplier;
+            
+                    const maxHorizontalMovement = scale < 0.95 ? targetMouseX * scaleMovementMultiplier : 0;
+            
+                    animationState.currentMouseX = gsap.utils.interpolate(
+                        currentMouseX,
+                        maxHorizontalMovement,
+                        0.05
+                    );
+            
+                    videoContainer.style.transform = `translateY(${currentTranslateY}%) translateX(${animationState.currentMouseX}px) scale(${scale})`
+
+                    requestAnimationFrame(animate);
+                };
+            
+                animate();
+            });
+        }
+    }
+})
+
+gsap.to(".intro_video_wrap", {
+    scrollTrigger: {
+        trigger: '.about',
+        start: 'top 55%',
+        end: 'top 40%',
+        scrub: true
+    },
+    'filter': 'blur(10px)'
+})
+
+gsap.to(".intro_video_wrap", {
+    scrollTrigger: {
+        trigger: '.about',
+        start: 'top 45%',
+        end: 'top 35%',
+        scrub: true
+    },
+    opacity: 0
 })
 
 $('nav li').mouseover(function(){
@@ -807,88 +929,3 @@ function update() {
     requestFrame(enterFrame);
 })();
 //------------------ CodePen Code ------------------//
-
-ScrollTrigger.matchMedia({
-    "(min-width: 1024px)": function(){
-        let videoWidth = $('.intro_video').width(),
-            videoCenter = videoWidth / 2,
-            winWidth = $(window).width();
-
-        $('.intro, .intro_video_wrap, .space_container').on('mousemove',function(e){
-            const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
-            
-            gsap.to(".intro_video", {
-                display: 'block',
-                x: follow,
-                'left': '0',
-                xPercent: 0
-            })
-        })
-
-        $(window).on('scroll',function(){
-            if ($(window).scrollTop() > ($('.intro').height() * 0.1)) {
-                $('.intro, .intro_video_wrap, .space_container').off('mousemove')
-                
-                gsap.to(".intro_video", {
-                    x: 'none',
-                    'left': '50%',
-                    xPercent: -50
-                })
-            } else {
-                $('.intro, .intro_video_wrap, .space_container').on('mousemove',function(e){
-                    const follow = (e.pageX * 0.6) + (winWidth * 0.2) - videoCenter
-                    
-                    gsap.to(".intro_video", {
-                        x: follow,
-                        'left': '0',
-                        xPercent: 0,
-                        'transition-duration': '0.15s'
-                    })
-                })
-            }
-        })
-
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.space_container',
-                start: 'top 90%',
-                end: 'top 50%',
-                scrub: true,
-            }
-        }).fromTo(".intro_video", {
-            'width': 'calc(30% + ((1920px - 100vw) / 10))',
-            'top': '0'
-        }, {
-            'width': 'calc(90% + ((1920px - 100vw) / 10))',
-            'top': '5%'
-        }, 0)
-
-        gsap.to(".intro_video", {
-            scrollTrigger: {
-                trigger: '.about',
-                start: 'top 55%',
-                end: 'top 40%',
-                scrub: true
-            },
-            'filter': 'blur(10px)'
-        })
-
-        gsap.to(".intro_video", {
-            scrollTrigger: {
-                trigger: '.about',
-                start: 'top 45%',
-                end: 'top 35%',
-                scrub: true
-            },
-            opacity: 0
-        })
-    },
-
-    "(max-width: 1023px)": function(){
-        $('.intro, .intro_video_wrap, .space_container, body').off('mousemove')
-        
-        gsap.to(".intro_video", {
-            display: 'none'
-        })
-    }
-})

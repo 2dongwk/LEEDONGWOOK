@@ -211,7 +211,6 @@ nav li {
     overflow: hidden;
     color: #fff;
     mix-blend-mode: difference;
-    z-index: 10;
 }
 
 .intro_wrap {
